@@ -33,6 +33,15 @@ int main(){
 	//Закрытие потока fin:
 	fin.close();
 	
+	//Вывод исходного списка книг:
+	deque<string> temp_deque = my_deque_1;
+	cout << "Исходный список книг: " << endl;
+	while (not temp_deque.empty()){
+		
+		cout << temp_deque.back() << endl;
+		temp_deque.pop_back();
+	}
+	
 	//Сортировка на двух деках:
 		//Перемещение первой строки во второй дек:
 	my_string = my_deque_1.front();
@@ -46,15 +55,11 @@ int main(){
 		
 		if (my_deque_1.front().compare(my_deque_2.back()) < 0){
 			
-			cout << "jfldskajfldkaj" << endl;
-			
 			my_deque_2.push_back(my_string);
 			my_deque_1.pop_front();
 		}
 		
 		else if (my_deque_1.front().compare(my_deque_2.front()) > 0){
-			
-			cout << "jfldskjfldkas" << endl;
 			
 			my_deque_2.push_front(my_string);
 			my_deque_1.pop_front();
@@ -62,28 +67,39 @@ int main(){
 		
 		else{
 			
-			bool flag == TRUE;
 			int count = 0;
 			
-			my_string = my_deque_2.back();
-			my_deque_1.push_back(my_string);
-			my_deque_2.pop_back();
-			count += 1;
+			while (my_deque_1.front() >= my_deque_2.back()){
+				
+				my_string = my_deque_2.back();
+				my_deque_1.push_back(my_string);
+				my_deque_2.pop_back();
+				count += 1;
+			}
 			
-			if (){
+			//Запись элемента во второй дек:
+			my_string = my_deque_1.front();
+			my_deque_1.pop_front();
+			
+			my_deque_2.push_back(my_string);
+			
+			//Запись элементов назад:
+			for (int i = count; i > 0; i--){
 				
-				
+				my_string = my_deque_1.back();
+				my_deque_1.pop_back();
+				my_deque_2.push_back(my_string);
 			}
 		}
 	}
-	my_string = my_deque_1.front();
+	//my_string = my_deque_1.front();
 	
 	//Вывод отсортированного списка книг:
-	cout << "Отсортированный список книг: " << endl;
+	cout << endl << "Отсортированный список книг: " << endl;
 	while (not my_deque_2.empty()){
 		
-		cout << my_deque_2.front() << endl;
-		my_deque_2.pop_front();
+		cout << my_deque_2.back() << endl;
+		my_deque_2.pop_back();
 	}
 	
 	//Завершение программы:
