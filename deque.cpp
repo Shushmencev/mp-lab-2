@@ -15,10 +15,13 @@ class Deque{
 		
 	public:
 		
+		Element *element;
+		
 		//Конструктор:
 		Deque(){
 			
-			root = NULL;
+			element->back = NULL;
+			element->front = NULL;
 		}
 		
 		//Деструктор:
@@ -32,7 +35,11 @@ class Deque{
 		}
 		
 		//Добавление в конец очереди:
-		void push_back(){
+		void push_back(int x){
+			
+			if (element->back == NULL){
+				
+			}
 			
 		}
 		
