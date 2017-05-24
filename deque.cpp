@@ -1,72 +1,32 @@
+#include <fstream>
 #include <iostream>
+
+#include <deque>
+#include <algorithm>
 
 using namespace std;
 
-class Deque{
-	
-	private:
-		
-		//Елемент дека:
-		struct Element{
-			
-			int data;
-			Element *left, *right;
-		};
-		
-		Element *element, *back, *front;
-		
-	public:
-		
-		//Конструктор:
-		Deque(){
-			
-			element-> back = NULL;
-			element-> front = NULL;
-		}
-		
-		//Деструктор:
-		~Deque(){
-			
-		}
-		
-		//Вывод элементов дека:
-		void show(){
-			
-		}
-		
-		//Добавление в конец очереди:
-		void push_back(int x){
-			
-			//Если элемент стоит в конце очереди:
-			new_element = new Element;
-				
-			back = & new_element;
-			new_element-> front = & element;
-			new_element-> back = NULL;
-			
-		}
-		
-		//Добавление в начало очереди:
-		void push_front(){
-			
-		}
-		
-		//Выборка с конца очереди:
-		void pop_back(){
-			
-		}
-		
-		//Выборка с начала очереди:
-		void pop_front(){
-			
-		}
-};
-
-
-
 int main(){
 	
+	//Поддержка русского языка:
 	setlocale(LC_ALL, "Russian");
 	
+	//Объявление двух деков:
+	deque<int> my_deque_1, my_deque_2;
+	
+	//Создание потока fin:
+	ifstream fin;
+	fin.open("list_of_books.txt");
+	
+	//
+	
+	
+	//Закрытие потока fin:
+	fin.close();
+	
+	my_deque_1.push_back(5);
+	
+	//Завершение программы:
+	system("pause");
 	return 0;
 }
