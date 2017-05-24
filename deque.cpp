@@ -10,18 +10,18 @@ class Deque{
 		struct Element{
 			
 			int data;
-			Element *back, *front;
+			Element *left, *right;
 		};
 		
-	public:
+		Element *element, *back, *front;
 		
-		Element *element;
+	public:
 		
 		//Конструктор:
 		Deque(){
 			
-			element->back = NULL;
-			element->front = NULL;
+			element-> back = NULL;
+			element-> front = NULL;
 		}
 		
 		//Деструктор:
@@ -37,9 +37,12 @@ class Deque{
 		//Добавление в конец очереди:
 		void push_back(int x){
 			
-			if (element->back == NULL){
+			//Если элемент стоит в конце очереди:
+			new_element = new Element;
 				
-			}
+			back = & new_element;
+			new_element-> front = & element;
+			new_element-> back = NULL;
 			
 		}
 		
